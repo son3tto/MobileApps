@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <group
+        android:id="@+id/menu_group">
+        <item
+            android:id="@+id/menu_item1"
+            android:title="@string/menu_item"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/menu_item2"
+            android:visible="true"
+            app:showAsAction="never"
+            android:title="@string/font_size">
+            <menu>
+                <item
+                    android:id="@+id/font_big"
+                    android:title="@string/big" />
+                <item
+                    android:id="@+id/font_medium"
+                    android:title="@string/medium" />
+                <item
+                    android:id="@+id/font_small"
+                    android:title="@string/small" />
+            </menu>
+        </item>
+        <!-- 设置了icon就没办法显示文本 -->
+        <item
+            android:id="@+id/menu_item3"
+            android:icon="@drawable/lemon"
+            android:title="@string/color">
+            <menu>
+                <item
+                    android:id="@+id/font_red"
+                    android:title="@string/red" />
+                <item
+                    android:id="@+id/font_black"
+                    android:title="@string/black" />
+            </menu>
+        </item>
+    </group>
+
+
+</menu>

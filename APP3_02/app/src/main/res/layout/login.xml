@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/appname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_orange_light"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@id/usrname"
+        />
+
+    <EditText
+        android:id="@+id/usrname"
+        android:inputType="text"
+        android:maxLength="15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="@string/usrname"
+        app:layout_constraintTop_toTopOf="@id/appname"
+        />
+
+    <EditText
+        android:id="@+id/passwd"
+        android:maxLength="15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="@string/passwd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usrname"
+        />
+
+    <TextView
+        android:id="@+id/appname1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="ANDROID APP"
+        android:textSize="25dp"
+        android:textColor="#fff"
+        android:fontFamily="monospace"
+        app:layout_constraintBottom_toTopOf="@id/usrname"
+        app:layout_constraintEnd_toEndOf="@id/appname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/appname" />
+</android.support.constraint.ConstraintLayout>
