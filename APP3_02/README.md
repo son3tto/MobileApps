@@ -147,11 +147,11 @@ public class ChatActivity extends AppCompatActivity {
 
 * 界面
 
-![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/1-2.png)
+![图片加载ing](https://img3.doubanio.com/view/photo/l/public/p2599665823.webp)
 
 * 点击item，出现Toast
 
-![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/1-3.png)
+![图片加载ing](https://img9.doubanio.com/view/photo/l/public/p2599665824.webp)
 
 ## 2. 自定义布局的AlertDialog 配合intent跳转到题1页面
 
@@ -396,15 +396,15 @@ public class MainActivity extends AppCompatActivity {
 
 * 界面
 
-![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/2-1.png)
+![图片加载ing](https://img9.doubanio.com/view/photo/l/public/p2599665825.webp)
 
 * 点击button
 
-![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/2-2.png)
+![图片加载ing](https://img1.doubanio.com/view/photo/l/public/p2599665828.webp)
 
 * 点击sign in
 
-![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/2-3.png)
+![图片加载ing](https://img1.doubanio.com/view/photo/l/public/p2599665829.webp)
 
 ## 3. 使用XML定义菜单
 
@@ -520,7 +520,7 @@ onCreateOptionsMenu和onCreate方法都是在页面被launch的时候调用的�
 
 * 主菜单
 
-![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/main_menu.png)
+![图片加载ing](https://img3.doubanio.com/view/photo/l/public/p2599665842.webp)
 
 * 点击第一项“普通菜单项”，出现toast
 
@@ -818,15 +818,15 @@ public class SecondActivity extends AppCompatActivity {
 
 * 界面
 
-![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/3-1.png)
+![图片加载ing](https://img3.doubanio.com/view/photo/l/public/p2599665832.webp)
 
 * 长按进入Action Mode，并选择items
 
-![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/3-2.png)
+![图片加载ing](https://img9.doubanio.com/view/photo/l/public/p2599665834.webp)
 
 * 点击右上角确定，删除item
 
-![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/3-3.png)
+![图片加载ing](https://img9.doubanio.com/view/photo/l/public/p2599665836.webp)
 
 ## 5. 附加: RecyclerView的实现
 
@@ -979,4 +979,4 @@ public class RecycleActivity extends AppCompatActivity {
 
 * 界面
 
-![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/recycler.png)
+![图片加载ing](https://img3.doubanio.com/view/photo/l/public/p2599665850.webp)
