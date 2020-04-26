@@ -147,11 +147,11 @@ public class ChatActivity extends AppCompatActivity {
 
 * 界面
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/1-2.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/1-2.png)
 
 * 点击item，出现Toast
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/1-3.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/1-3.png)
 
 ## 2. 自定义布局的AlertDialog 配合intent跳转到题1页面
 
@@ -396,15 +396,15 @@ public class MainActivity extends AppCompatActivity {
 
 * 界面
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/2-1.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/2-1.png)
 
 * 点击button
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/2-2.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/2-2.png)
 
 * 点击sign in
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/2-3.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/2-3.png)
 
 ## 3. 使用XML定义菜单
 
@@ -520,21 +520,21 @@ onCreateOptionsMenu和onCreate方法都是在页面被launch的时候调用的�
 
 * 主菜单
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/main_menu.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/main_menu.png)
 
 * 点击第一项“普通菜单项”，出现toast
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/menu_toast.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/menu_toast.png)
 
 * 点击第二项“字体大小”，修改为大
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/font_big.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/font_big.png)
 
 * 点击第三项“字体颜色”，分别修改为红色、黑色
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/font_red.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/font_red.png)
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/font_black.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/font_black.png)
 
 ## 4. 创建上下文操作模式ActionMode的上下文菜单
 
@@ -818,15 +818,15 @@ public class SecondActivity extends AppCompatActivity {
 
 * 界面
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/3-1.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/3-1.png)
 
 * 长按进入Action Mode，并选择items
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/3-2.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/3-2.png)
 
 * 点击右上角确定，删除item
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/3-3.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/3-3.png)
 
 ## 5. 附加: RecyclerView的实现
 
@@ -979,4 +979,4 @@ public class RecycleActivity extends AppCompatActivity {
 
 * 界面
 
-![](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/recycler.png)
+![图片加载ing](https://github.com/sonettofighting/MobileApps/blob/master/APP3_02/imgs/recycler.png)
