@@ -1,8 +1,8 @@
 # Android界面布局
 
-Anthor: [@sonettofighting](https://github.com/sonettofighting) 
+Author: [@sonettofighting](https://github.com/sonettofighting) 
 
-This is an academic assginment.
+This is an academic assignment.
 
 ## 任务一
 

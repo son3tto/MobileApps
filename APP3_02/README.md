@@ -1,8 +1,8 @@
 # **Android UI**组件
 
-Anthor: [@sonettofighting](https://github.com/sonettofighting)
+Author: [@sonettofightuing](https://github.com/sonettofighting)
 
-This is an academic assginment.
+This is an academic assignment.
 
 [TOC]
 
