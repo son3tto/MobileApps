@@ -14,4 +14,4 @@ This is an academic assignment.
 
 4. #### [Intent](https://github.com/sonettofighting/MobileApps/tree/master/APP04_WebView)
 
-5. ##### [NotePad](https://github.com/sonettofighting/MobileApps/tree/master/ MidTerm_App05_NotePad)
+5. #### [NotePad](https://github.com/sonettofighting/MobileApps/tree/master/MidTerm_App05_NotePad)
