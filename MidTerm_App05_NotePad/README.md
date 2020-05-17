@@ -21,7 +21,7 @@ This is an Android Studio rebuild of google SDK sample NotePad.
 
 新建的Vector Asset将会作为菜单中查找功能的图标
 
-![image-20200517135245491](https://github.com/sonettofighting/MobileApps/tree/master//README.assets/image-20200517135245491.png)
+![image-20200517135245491](https://github.com/sonettofighting/MobileApps/blob/master/MidTerm_App05_NotePad/README.assets/image-20200517135245491.png)
 
 #### 2. list_options_menu.xml
 
@@ -280,12 +280,12 @@ public void initSearch(Menu menu){
 
 时间戳展示
 
-![image-20200517145017520](https://github.com/sonettofighting/MobileApps/tree/master//README.assets/image-20200517145017520.png)
+![image-20200517145017520](https://github.com/sonettofighting/MobileApps/blob/master/MidTerm_App05_NotePad/README.assets/image-20200517145017520.png)
 
 模糊查询
 
-![image-20200517145036611](https://github.com/sonettofighting/MobileApps/tree/master//README.assets/image-20200517145036611.png)
+![image-20200517145036611](https://github.com/sonettofighting/MobileApps/blob/master/MidTerm_App05_NotePad/README.assets/image-20200517145036611.png)
 
 匹配唯一
 
-![image-20200517145048958](https://github.com/sonettofighting/MobileApps/tree/master//README.assets/image-20200517145048958.png)
+![image-20200517145048958](https://github.com/sonettofighting/MobileApps/blob/master/MidTerm_App05_NotePad/README.assets/image-20200517145048958.png)
