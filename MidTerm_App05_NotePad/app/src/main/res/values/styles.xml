@@ -1,0 +1,23 @@
+<resources>
+
+
+    <style name="DayTheme" parent="AppTheme">
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+        <item name="android:foreground">@color/colorPrimaryDark</item>
+
+    </style>
+
+    <style name="AppBaseTheme" parent="android:Theme.Light" />
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="text_cl">#ffffff</item>
+        <item name="button_bg">#000000</item>
+        <item name="activity_bg">#ffffff</item>
+    </style>
+
+    <style name="DarkTheme" parent="AppBaseTheme">
+        <item name="text_cl">#000000</item>
+        <item name="button_bg">#ffffff</item>
+        <item name="activity_bg">#000000</item>
+    </style>
+</resources>

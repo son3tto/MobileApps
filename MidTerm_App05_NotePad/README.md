@@ -8,6 +8,7 @@ This is an Android Studio rebuild of google SDK sample NotePad.
 
 1. Add timestamp for each of the note items.
 2. Fuzzy search is now available.
+3. Activate Dark Mode.
 
 [TOC]
 
@@ -17,11 +18,15 @@ This is an Android Studio rebuild of google SDK sample NotePad.
 
 ​	本次实验没有用到除sample源文件外的其他组件，所以只需要做小的调整即可。
 
-#### 1. New a Vector Asset
+#### 1. New Vector Assets
 
-新建的Vector Asset将会作为菜单中查找功能的图标
+新建的Vector Asset将会作为菜单中查找功能和之后设置dark mode的图标
 
 ![image-20200517135245491](https://github.com/sonettofighting/MobileApps/blob/master/MidTerm_App05_NotePad/README.assets/image-20200517135245491.png)
+
+ps: 做到一半给Android Studio换了个主题，好看多了！IDEA真好啊！比eclipse👍
+
+![image-20200531034849759](https://github.com/sonettofighting/MobileApps/blob/master/MidTerm_App05_NotePad/README.assets/image-20200531034849759.png)
 
 #### 2. list_options_menu.xml
 
@@ -32,6 +37,11 @@ This is an Android Studio rebuild of google SDK sample NotePad.
         android:showAsAction="always"
         android:title="@string/search"
       android:actionViewClass="android.widget.SearchView"/>
+
+    <item
+        android:id="@+id/menu_setting"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/setting" />
 ```
 
 如下两句结合使用，可以使图标保持显示，而不会被折叠（collapse）。
@@ -72,6 +82,78 @@ This is an Android Studio rebuild of google SDK sample NotePad.
         app:layout_constraintEnd_toEndOf="parent"/>
 </android.support.constraint.ConstraintLayout>
 ```
+
+#### 4. mode_setting.xml
+
+新增一个设置的布局文件，配合新的Activity使用，实现主题的切换。
+
+本来是想用约束布局的，但是感觉这里用线性布局比较好操作啊？
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/mode_switch_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_brightness_4_black_24dp"
+            android:contentDescription="TODO" />
+
+
+        <TextView
+            android:id="@+id/mode_switch_text"
+            android:layout_width="77dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="@string/mode_switch" />
+
+
+        <Switch
+            android:id="@+id/mode_switch_switch"
+            android:layout_width="251dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="30dp"
+            android:clickable="true" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:foreground="@android:color/darker_gray" />
+</LinearLayout>
+
+```
+
+#### 5. Manifest.xml
+
+因为要增加一个设置页面 ,所以在manifest文件中对activity注册.
+
+```xml
+        <activity android:name=".SettingActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+```
+
+
 
 ### Modifying JAVA class files
 
@@ -274,18 +356,108 @@ public void initSearch(Menu menu){
     }
 ```
 
+#### 4.SecondActivity.xml
+
+这是设置的activity文件,其实写的有点乱乱的. 因为遇到了一点问题.
+
+我的设想是当switch组件checked以后, 用setTheme方法打开护眼模式(aka. dark mode), 
+
+遇到了俩问题, 最后马马虎虎解决吧
+
+1. 用自己写的主题文件(attr,xml + style.xml + 布局文件配合使用)跑不起来, 所以最后干脆直接升级了androidX, 用自带的主题..成功!
+
+2. 重新开启之后页面并不会改变主题. 看了网上的分析, 要把setTheme放在setContentView方法之前执行,才能生效.
+
+但是还是有遗留的问题, 当前页面生效了, 可是notelist页面还是不能生效, 这咋整呢
+
+
+``` java
+package com.example.android.notepad;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.Toast;
+
+public class SettingActivity extends AppCompatActivity {
+
+    Switch modeSwitch;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        if(sharedPreferences.getBoolean("nightMode", false)){
+            setTheme(R.style.ThemeOverlay_MaterialComponents_Dark_ActionBar);
+        }
+        setContentView(R.layout.mode_setting);
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        initModeSwitch();
+    }
+
+    void initModeSwitch(){
+        modeSwitch = findViewById(R.id.mode_switch_switch);
+
+        modeSwitch.setChecked(sharedPreferences.getBoolean("nightMode", false));
+        modeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                setNightModePreference(isChecked);
+                setNightModeImmediately();
+            }
+        });
+    }
+
+    void setNightModePreference(boolean isChecked){
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        boolean b = sharedPreferences.getBoolean("nightMode", false);
+
+        editor = sharedPreferences.edit();
+        editor.putBoolean("nightMode", isChecked);
+        Toast.makeText(getApplicationContext(), String.valueOf(b), Toast.LENGTH_LONG).show();
+        editor.apply();
+    }
+
+    void setNightModeImmediately(){
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        setTheme(R.style.ThemeOverlay_MaterialComponents_Dark_ActionBar);
+        Intent intent = new Intent(this, this.getClass());
+        startActivity(intent);
+        finish();
+    }
+}
+
+```
+
 至此，所有的修改都完成了。
 
 ### Results
 
-时间戳展示
+**时间戳展示**
 
 ![image-20200517145017520](https://github.com/sonettofighting/MobileApps/blob/master/MidTerm_App05_NotePad/README.assets/image-20200517145017520.png)
 
-模糊查询
+**模糊查询**
 
 ![image-20200517145036611](https://github.com/sonettofighting/MobileApps/blob/master/MidTerm_App05_NotePad/README.assets/image-20200517145036611.png)
 
-匹配唯一
+**匹配唯一**
 
 ![image-20200517145048958](https://github.com/sonettofighting/MobileApps/blob/master/MidTerm_App05_NotePad/README.assets/image-20200517145048958.png)
+
+**设置页面**
+
+![image-20200531040015006](https://github.com/sonettofighting/MobileApps/blob/master/MidTerm_App05_NotePad/README.assets/image-20200531040015006.png)
+
+**打开护眼模式**
+
+![image-20200531040117306](https://github.com/sonettofighting/MobileApps/blob/master/MidTerm_App05_NotePad/README.assets/image-20200531040117306.png)

@@ -84,7 +84,7 @@ public class NoteEditor extends Activity {
     /**
      * Defines a custom EditText View that draws lines between each line of text that is displayed.
      */
-    public static class LinedEditText extends EditText {
+    public static class LinedEditText extends androidx.appcompat.widget.AppCompatEditText {
         private Rect mRect;
         private Paint mPaint;
 
